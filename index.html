@@ -477,6 +477,18 @@ section::after{margin-top:-4px}
 .roster .seat.open{border:16px solid transparent;border-image:url(ui/card.png) 30 fill / 16px;image-rendering:pixelated;background:none;opacity:.62;filter:grayscale(.35)}
 .roster .seat.open > *{image-rendering:auto}
 .roster .seat.pending{border:16px solid transparent;border-image:url(ui/card.png) 30 fill / 16px;image-rendering:pixelated;background:none}
+.entries li{grid-template-columns:9.5rem 1fr auto}
+.entries .date{white-space:nowrap}
+@media (max-width:560px){.entries li{grid-template-columns:1fr auto}}
+
+details.book > summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 12px}
+details.book > summary::-webkit-details-marker{display:none}
+details.book .book-toggle{flex-basis:100%;font-family:var(--f-mono);font-weight:600;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+details.book .book-toggle::before{content:"Open Nova’s page ✦"}
+details.book[open] .book-toggle::before{content:"Close the page"}
+details.book > summary:hover .book-toggle{text-decoration:underline}
+details.book:not([open]){padding-bottom:4px}
+details.book[open] > summary{margin-bottom:6px}
 </style>
 
 <script>document.documentElement.classList.add("gate")</script>
@@ -839,7 +851,7 @@ section::after{margin-top:-4px}
 
 <div class="panel" id="progression" role="tabpanel" aria-labelledby="t-progression" hidden>
 
-<div class="subnav"><a href="#p-paths">Two paths</a><a href="#p-chronicle">The Chronicle</a><a href="#p-tiers">Events</a><a href="#p-stages">Power tiers</a><a href="#p-ranks">Ranks</a><a href="#p-roles">Taking part</a><a href="#p-fair">Fairness</a><a href="#p-mod">Mod notes</a><a href="#p-open">Open questions</a></div>
+<div class="subnav"><a href="#p-paths">Two paths</a><a href="#p-chronicle">The Chronicle</a><a href="#p-tiers">Events</a><a href="#p-stages">Power tiers</a><a href="#p-ranks">Ranks</a><a href="#p-roles">Taking part</a><a href="#p-fair">Fairness</a></div>
 
 <section id="p-paths">
   <div class="ch-head"><span class="label">Chapter I</span><h2>Two paths of progress</h2></div>
@@ -869,18 +881,24 @@ section::after{margin-top:-4px}
   <div class="ch-head"><span class="emblem" aria-hidden="true"><img src="ui/i-grimoire.png" alt="" width="128" height="128"></span><span class="label">Chapter II</span><h2>The Chronicle</h2></div>
   <div class="prose">
     <p>The guild's old record book is the levelling system. When a character takes part in a lore event, their deed is inscribed. Each inscription is worth Ink, and Ink is what deepens a blessing.</p>
-    <p>Players can open their page in-game at any time. It works as a level counter and a trophy shelf for roleplay.</p>
+    <p>Players can open their page in-game at any time. It works as a level counter and a trophy shelf for roleplay. Below is Nova's page from her adventuring days, the climb that made her a Legend.</p>
   </div>
-  <div class="book" aria-label="Example Chronicle page">
-    <img class="book-seal" src="ui/seal.png" alt="" width="151" height="150"><div class="book-head"><h3>Nova · Snow Owl, Tavern Keeper</h3><span class="label">Example page</span></div>
+  <details class="book" aria-label="Example Chronicle page">
+    <img class="book-seal" src="ui/seal.png" alt="" width="151" height="150"><summary class="book-head"><h3>Nova · Snow Owl, Tavern Keeper</h3><span class="label">Example page · highlights</span><span class="book-toggle"></span></summary>
     <ul class="entries">
       <li><span class="date">Season I · Wk 2</span><span class="line">Descended into the Frostvein Hollow and found the sealed door.</span><span class="tag t-whisper">Whisper</span></li>
-      <li><span class="date">Season I · Wk 3</span><span class="line">Fed the defenders of the north wall through the long night.</span><span class="tag t-whisper">Whisper</span></li>
       <li><span class="date">Season I · Wk 6</span><span class="line">Reclaimed the Emblem of the Old Guild at the Ember Ring tournament.</span><span class="tag t-saga">Saga</span></li>
       <li><span class="date">Season I · Wk 12</span><span class="line">Stood against the Calamity of the Ashen Tide when it reached the gates.</span><span class="tag t-calamity">Calamity</span></li>
+      <li><span class="date">Season II · Wk 7</span><span class="line">Hunted the Frostfang Wyrm through the northern passes.</span><span class="tag t-saga">Saga</span></li>
+      <li><span class="date">Season II · Wk 13</span><span class="line">Held the river bridge against the Calamity of the Pale Mire.</span><span class="tag t-calamity">Calamity</span></li>
+      <li><span class="date">Season III · Wk 9</span><span class="line">Won the Silver Bell tournament against the guild champions.</span><span class="tag t-saga">Saga</span></li>
+      <li><span class="date">Season III · Wk 13</span><span class="line">Broke the siege of the Calamity of a Thousand Wings.</span><span class="tag t-calamity">Calamity</span></li>
+      <li><span class="date">Season IV · Wk 5</span><span class="line">Recovered the lost record pages from the Drowned Archive.</span><span class="tag t-saga">Saga</span></li>
+      <li><span class="date">Season IV · Wk 13</span><span class="line">Shielded the town through the Calamity of the Endless Frost.</span><span class="tag t-calamity">Calamity</span></li>
+      <li><span class="date">Season V · Wk 13</span><span class="line">Struck the final blow against the Calamity of the Hollow Crown.</span><span class="tag t-calamity">Calamity</span></li>
     </ul>
-    <div class="book-foot"><span>Ink: <b>1 + 1 + 4 + 10 = 16</b></span><span>Tier: <b>2 · Adept</b> · 24 Ink to Expert</span></div>
-  </div>
+    <div class="book-foot"><span>Ink: <b>20 a season for 5 seasons = 100</b></span><span>Tier: <b>5 · Legend</b> · Mythril</span></div>
+  </details>
 </section>
 
 <section id="p-tiers">
@@ -919,7 +937,7 @@ section::after{margin-top:-4px}
         <span class="label">Example · Nova</span>
         <p>As a Novice she has Ice Feathers and Grab. Dive and Defend arrives at Adept, Ice Tornado at Master, and Rage Mode only once she becomes a Legend. That is why a retired Mythril adventurer outclasses anyone fresh off the road.</p>
       </div>
-      <p class="prose" style="color:var(--muted)">Legend is the rarest tier on the server. It can only be reached by standing against a Calamity and surviving it.</p>
+      <p class="prose" style="color:var(--muted)">Legend is the rarest tier on the server. It can only be reached by standing against a Calamity and defeating it.</p>
     </div>
     <figure><img src="img/bone-throne.jpg" alt="A winged, white-haired figure rests above a pile of armour, skulls, crowns and laurels" width="919" height="1600" loading="lazy"><figcaption><span></span><span class="credit">Art: WLOP</span></figcaption></figure>
   </div>
@@ -940,7 +958,7 @@ section::after{margin-top:-4px}
 
 <section id="p-roles">
   <div class="ch-head"><span class="label">Chapter VI</span><h2>Everyone can take part</h2>
-    <p class="prose">An event counts for anyone who helped, not just those who swung a weapon. A farmer feeding the wall or a healer at the gate is as much a part of the story as the one at the front.</p></div>
+    <p class="prose">An event counts for anyone who helped, not just those who swung a weapon. A farmer bringing food to the defenders or a healer tending the wounded is as much a part of the story as the fighter at the front.</p></div>
   <figure class="banner"><img src="img/spear-knight.jpg" alt="A helmed knight with a burning spear in the rain, seen from below" width="1600" height="883" loading="lazy"><figcaption><span></span><span class="credit">Art: WLOP</span></figcaption></figure>
   <div class="tablewrap">
     <table>
@@ -950,7 +968,7 @@ section::after{margin-top:-4px}
         <tr><td class="name">Mender</td><td>Healing, reviving, curing afflictions</td><td>Full</td></tr>
         <tr><td class="name">Provisioner</td><td>Farmers and cooks supplying food and potions to the defenders</td><td>Full</td></tr>
         <tr><td class="name">Scout</td><td>Finding the path, spotting the enemy, carrying messages</td><td>Full</td></tr>
-        <tr><td class="name">Hearthkeeper</td><td>Running the field kitchen or sheltering civilians at the tavern</td><td>Full</td></tr>
+        <tr><td class="name">Warden</td><td>Leading townsfolk to safety and guarding the town while the fighters are away</td><td>Full</td></tr>
         <tr><td class="name">Witness</td><td>Missed it, but heard the tale told at the tavern</td><td>Partial</td></tr>
       </tbody>
     </table>
@@ -961,37 +979,12 @@ section::after{margin-top:-4px}
   <div class="ch-head"><span class="label">Chapter VII</span><h2>Keeping it fair</h2></div>
   <div class="cards">
     <div class="card"><h3>Echoes</h3><p>Past Sagas can be replayed as instanced Echoes for half the Ink, so players in other time zones can catch up.</p></div>
-    <div class="card"><h3>Witness credit</h3><p>Hearing a tale from someone who was there gives 1 Ink once per event. It rewards roleplay and costs staff nothing.</p></div>
+    <div class="card"><h3>Witness credit</h3><p>Hearing a tale from someone who was there gives 1 Ink once per event.</p></div>
     <div class="card"><h3>First time counts</h3><p>Full Ink only on your first clear. Repeats give the story, not the power.</p></div>
     <div class="card"><h3>Season cap</h3><p>No more than 20 Ink per season. Veterans can't race ahead, and newer players close the gap season by season.</p></div>
   </div>
 </section>
 
-<section id="p-mod">
-  <div class="ch-head"><span class="label">Chapter VIII</span><h2>Mod notes · valaria</h2>
-    <p class="prose">Everything above runs off one per-player record stored on the character. Ability unlocks just read the tier.</p></div>
-<pre><span class="c"># Per-player capability</span>
-chronicle: [ { eventId, tier, season, role } ]
-ink: int            <span class="c"># derived from entries</span>
-tier: 1..5          <span class="c"># Novice .. Legend, derived from ink</span>
-rank: COPPER | SILVER | GOLD | PLATINUM | MYTHRIL
-
-<span class="c"># Staff commands for live events</span>
-/valaria chronicle grant &lt;player&gt; &lt;eventId&gt; [role]
-/valaria chronicle grant @a[distance=..80] &lt;eventId&gt;
-/valaria chronicle view &lt;player&gt;
-/valaria rank promote &lt;player&gt;
-
-<span class="c"># Automatic grants for Whispers</span>
-on boss defeat / region entered / quest flag set → grant(eventId)</pre>
-</section>
-
-<section id="p-open">
-  <div class="ch-head"><span class="label">Chapter IX</span><h2>Still to decide</h2></div>
-  <ol class="num">
-    <li><span>What does each rank trial look like, from Silver up to Platinum?</span></li>
-  </ol>
-</section>
 </div>
 
 <nav class="pager" aria-label="Turn the page">
