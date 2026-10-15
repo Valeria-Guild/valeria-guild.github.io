@@ -489,6 +489,7 @@ details.book[open] .book-toggle::before{content:"Close the page"}
 details.book > summary:hover .book-toggle{text-decoration:underline}
 details.book:not([open]){padding-bottom:4px}
 details.book[open] > summary{margin-bottom:6px}
+.rule-choice{margin-top:4px}
 </style>
 
 <script>document.documentElement.classList.add("gate")</script>
@@ -725,7 +726,7 @@ details.book[open] > summary{margin-bottom:6px}
       </tbody>
     </table>
   </div>
-  <p class="prose">New characters start at <strong>Novice</strong> or <strong>Adept</strong>. Higher tiers are earned through lore events. See the Progression tab.</p>
+  <p class="prose">Every new character starts at <strong>Novice</strong> with <strong>5 abilities</strong>. New abilities and upgrades are earned through lore events. See the Progression tab.</p>
 </section>
 
 <section id="c-sheet">
@@ -760,7 +761,7 @@ details.book[open] > summary{margin-bottom:6px}
 
 --- SKILLS &amp; POWERS ---
 **Skills:** (non-magic talents like tracking, haggling, or swordplay)
-**Powers / Abilities:**
+**Powers / Abilities:** (exactly 5)
 **Source of Power:**
 **Limits / Weaknesses:**
 **Weapons &amp; Gear:** (medieval only)
@@ -918,14 +919,14 @@ details.book[open] > summary{margin-bottom:6px}
 
 <section id="p-stages">
   <div class="ch-head"><span class="label">Chapter IV</span><h2>Power tiers</h2>
-    <p class="prose">These are the same five tiers as the character creation guide. New characters start at Novice or Adept, and Ink carries them upward. What each tier unlocks is written per character, so every power still feels its own.</p>
+    <p class="prose">Every character starts at Novice with all <strong>5 abilities</strong> from their sheet. Each time you reach a new tier, you choose how your power grows: learn a <strong>new ability</strong>, or <strong>upgrade</strong> one you already have.</p>
     <p class="prose">A tier is a big moment, not a routine reward. Reaching one takes <strong>several seasons</strong> of taking part in the story.</p></div>
   <div class="stages">
-    <div class="stage"><div class="node">1</div><h3>Novice</h3><span class="stars" aria-label="1 of 5 stars"><i class="on"></i><i></i><i></i><i></i><i></i></span><p>Small tricks, 1 to 2 starting abilities</p><span class="need">0 Ink</span></div>
-    <div class="stage"><div class="node">2</div><h3>Adept</h3><span class="stars" aria-label="2 of 5 stars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><p>Useful in a fight, third ability unlocks</p><span class="need">15 Ink · season 1+</span></div>
-    <div class="stage"><div class="node">3</div><h3>Expert</h3><span class="stars" aria-label="3 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><p>Changes a battle, upgrades to range and power</p><span class="need">40 Ink · season 2+</span></div>
-    <div class="stage"><div class="node">4</div><h3>Master</h3><span class="stars" aria-label="4 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><p>Known across the land, fourth ability</p><span class="need">70 Ink · season 4+</span></div>
-    <div class="stage"><div class="node">5</div><h3>Legend</h3><span class="stars" aria-label="5 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><p>Signature move, such as a rage or ultimate</p><span class="need">100 Ink + Calamity · season 5+</span></div>
+    <div class="stage"><div class="node">1</div><h3>Novice</h3><span class="stars" aria-label="1 of 5 stars"><i class="on"></i><i></i><i></i><i></i><i></i></span><p>Your 5 starting abilities</p><span class="need">0 Ink</span></div>
+    <div class="stage"><div class="node">2</div><h3>Adept</h3><span class="stars" aria-label="2 of 5 stars"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><p>Choose a new ability or an upgrade</p><span class="need">15 Ink · season 1+</span></div>
+    <div class="stage"><div class="node">3</div><h3>Expert</h3><span class="stars" aria-label="3 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span><p>Choose a new ability or an upgrade</p><span class="need">40 Ink · season 2+</span></div>
+    <div class="stage"><div class="node">4</div><h3>Master</h3><span class="stars" aria-label="4 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span><p>Choose a new ability or an upgrade</p><span class="need">70 Ink · season 4+</span></div>
+    <div class="stage"><div class="node">5</div><h3>Legend</h3><span class="stars" aria-label="5 of 5 stars"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><p>Choose a new ability or an upgrade, often a signature move</p><span class="need">100 Ink + Calamity · season 5+</span></div>
   </div>
   <div class="cards">
     <div class="card"><span class="label">Rule</span><h3>20 Ink per season, at most</h3><p>Whatever you take part in, a season can add no more than 20 Ink to your Chronicle. The tiers above are the fastest anyone can possibly climb.</p></div>
@@ -935,7 +936,7 @@ details.book[open] > summary{margin-bottom:6px}
     <div style="display:grid;gap:18px;min-width:0">
       <div class="example">
         <span class="label">Example · Nova</span>
-        <p>As a Novice she has Ice Feathers and Grab. Dive and Defend arrives at Adept, Ice Tornado at Master, and Rage Mode only once she becomes a Legend. That is why a retired Mythril adventurer outclasses anyone fresh off the road.</p>
+        <p>Nova started with her five abilities: Ice Feathers, Grab, Dive and Defend, Ice Tornado and Rage Mode. Over five seasons she spent her four tier choices on upgrades, so every one of them hits far harder than a newcomer’s. That is why a retired Mythril adventurer outclasses anyone fresh off the road.</p>
       </div>
       <p class="prose" style="color:var(--muted)">Legend is the rarest tier on the server. It can only be reached by standing against a Calamity and defeating it.</p>
     </div>
